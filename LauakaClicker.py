@@ -7,7 +7,7 @@ pygame.init()
 # Window
 WIDTH, HEIGHT = 600, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Simple Clicker")
+pygame.display.set_caption("Lauaka Clicker")
 
 # Load your image
 image = pygame.image.load("Sprites/lauakas.png")

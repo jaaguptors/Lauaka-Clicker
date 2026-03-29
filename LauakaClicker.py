@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Simple Clicker")
 
 # Load your image
-image = pygame.image.load("image.png")
+image = pygame.image.load("sprites/lauakas.png")
 image = pygame.transform.scale(image, (200, 200))
 
 # Position (center)

@@ -38,8 +38,6 @@ while True:
 
     screen.blit(background, (0, 0))
     screen.blit(image, image_place)
-
-    # Draw text
     text = font.render(f"pudelid: {pudelid}", True, (0, 0, 0))
     screen.blit(text, (20, 20))
 

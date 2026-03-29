@@ -13,11 +13,14 @@ pygame.display.set_caption("Lauaka Clicker")
 image = pygame.image.load("Sprites/lauakas.png")
 image = pygame.transform.scale(image, (200, 200))
 
+background = pygame.image.load("Sprites/keegi-alles-kaebas-et-õlu-on-kallis-rimis-walter-praegu-59-v0-arsiof01d6yb1.webp")
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+
 # Position (center)
-image_rect = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+image_place = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))
 
 # Counter
-cookies = 0
+pudelid = 0
 
 # Font
 font = pygame.font.SysFont(None, 40)
@@ -29,17 +32,15 @@ while True:
             pygame.quit()
             sys.exit()
 
-        # Detect click
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if image_rect.collidepoint(event.pos):
-                cookies += 1
+            if image_place.collidepoint(event.pos):
+                pudelid += 1
 
-    # Draw
-    screen.fill((30, 30, 30))  # background
-    screen.blit(image, image_rect)
+    screen.blit(background, (0, 0))
+    screen.blit(image, image_place)
 
     # Draw text
-    text = font.render(f"Cookies: {cookies}", True, (255, 255, 255))
+    text = font.render(f"pudelid: {pudelid}", True, (0, 0, 0))
     screen.blit(text, (20, 20))
 
     pygame.display.flip()

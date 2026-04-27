@@ -1,31 +1,43 @@
 import pygame
 import sys
 
-# Init
 pygame.init()
-
-# Window
 WIDTH, HEIGHT = 600, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Lauaka Clicker")
 
-# Load your image
 image = pygame.image.load("Sprites/lauakas.png")
 image = pygame.transform.scale(image, (200, 200))
 
 background = pygame.image.load("Sprites/keegi-alles-kaebas-et-õlu-on-kallis-rimis-walter-praegu-59-v0-arsiof01d6yb1.webp")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
-# Position (center)
 image_place = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-
-# Counter
+font = pygame.font.SysFont(None, 40)
+small_font = pygame.font.SysFont(None, 30)
 pudelid = 0
 
-# Font
-font = pygame.font.SysFont(None, 40)
+artur_image = pygame.image.load("Sprites/artur.png")
+artur_image = pygame.transform.scale(artur_image, (80, 80))
+artur_place = artur_image.get_rect(topright=(WIDTH - 10, 10))
 
-# Game loop
+ronja_image = pygame.image.load("Sprites/ronja.png")
+ronja_image = pygame.transform.scale(ronja_image, (80, 80))
+ronja_place = ronja_image.get_rect(topright=(WIDTH - 10, 140))
+
+rass_image = pygame.image.load("Sprites/rass.png")
+rass_image = pygame.transform.scale(rass_image, (80, 80))
+rass_place = rass_image.get_rect(topright=(WIDTH - 10, 270))
+
+artur_price = 500
+ronja_price = 20
+rass_price = 100
+
+cursor = 1
+second_counter = 0
+last_increment_time = None
+ronja = 0
+rass = 0
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -34,11 +46,50 @@ while True:
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             if image_place.collidepoint(event.pos):
-                pudelid += 1
+                pudelid += cursor
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if artur_place.collidepoint(event.pos):
+                if pudelid >= artur_price:
+                    pudelid -= artur_price
+                    cursor += 1
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if ronja_place.collidepoint(event.pos):
+                if pudelid >= ronja_price:
+                    pudelid -= ronja_price
+                    ronja += 1
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if rass_place.collidepoint(event.pos):
+                if pudelid >= rass_price:
+                    pudelid -= rass_price
+                    rass += 10
+
+
+        current_time = pygame.time.get_ticks()
+        if last_increment_time is None:
+            last_increment_time = current_time
+
+        if current_time - last_increment_time >= 1000:
+            pudelid += rass
+            pudelid += ronja
+            last_increment_time = current_time
 
     screen.blit(background, (0, 0))
     screen.blit(image, image_place)
-    text = font.render(f"pudelid: {pudelid}", True, (0, 0, 0))
-    screen.blit(text, (20, 20))
+    screen.blit(artur_image, artur_place)
+    screen.blit(ronja_image, ronja_place)
+    screen.blit(rass_image, rass_place)
+    pudelid_text = font.render(f"pudelid: {pudelid}      X{cursor}", True, (0, 0, 0))
+    artur_text = small_font.render(f"{artur_price}", True, (0, 0, 0))
+    ronja_text = small_font.render(f"{ronja_price}", True, (0, 0, 0))
+    rass_text = small_font.render(f"{rass_price}", True, (0, 0, 0))
+
+    screen.blit(pudelid_text, (20, 20))
+    screen.blit(artur_text, (WIDTH - 70, 100))
+    screen.blit(ronja_text, (WIDTH - 70, 230))
+    screen.blit(rass_text, (WIDTH - 70, 360))
+
 
     pygame.display.flip()

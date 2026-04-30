@@ -78,15 +78,6 @@ while True:
                     rass += 10
 
 
-        current_time = pygame.time.get_ticks()
-        if last_increment_time is None:
-            last_increment_time = current_time
-
-        if current_time - last_increment_time >= 1000:
-            pudelid += rass
-            pudelid += ronja
-            last_increment_time = current_time
-
     screen.blit(background, (0, 0))
     screen.blit(image, image_place)
     screen.blit(artur_image, artur_place)

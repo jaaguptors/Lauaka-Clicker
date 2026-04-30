@@ -6,8 +6,8 @@ WIDTH, HEIGHT = 600, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Lauaka Clicker")
 
-image = pygame.image.load("Sprites/lauakas.png")
-image = pygame.transform.scale(image, (200, 200))
+image = pygame.image.load("Sprites/LauakaSprite.png")
+image = pygame.transform.scale(image, (420, 420))
 
 background = pygame.image.load("Sprites/keegi-alles-kaebas-et-õlu-on-kallis-rimis-walter-praegu-59-v0-arsiof01d6yb1.webp")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))

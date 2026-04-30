@@ -39,6 +39,17 @@ last_increment_time = None
 ronja = 0
 rass = 0
 while True:
+
+    current_time = pygame.time.get_ticks()
+    if last_increment_time is None:
+        last_increment_time = current_time
+
+    if current_time - last_increment_time >= 1000:
+        pudelid += rass
+        pudelid += ronja
+        last_increment_time = current_time
+
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()

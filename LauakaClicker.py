@@ -21,8 +21,8 @@ artur_image = pygame.image.load("Sprites/Sammal.png")
 artur_image = pygame.transform.scale(artur_image, (100, 100))
 artur_place = artur_image.get_rect(topright=(WIDTH - 10, 10))
 
-ronja_image = pygame.image.load("Sprites/ronja.png")
-ronja_image = pygame.transform.scale(ronja_image, (80, 80))
+ronja_image = pygame.image.load("Sprites/Ronja.png")
+ronja_image = pygame.transform.scale(ronja_image, (100, 100))
 ronja_place = ronja_image.get_rect(topright=(WIDTH - 10, 140))
 
 rass_image = pygame.image.load("Sprites/rass.png")

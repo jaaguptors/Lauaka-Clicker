@@ -25,8 +25,8 @@ ronja_image = pygame.image.load("Sprites/Ronja.png")
 ronja_image = pygame.transform.scale(ronja_image, (100, 100))
 ronja_place = ronja_image.get_rect(topright=(WIDTH - 10, 140))
 
-rass_image = pygame.image.load("Sprites/rass.png")
-rass_image = pygame.transform.scale(rass_image, (80, 80))
+rass_image = pygame.image.load("Sprites/Rass.png")
+rass_image = pygame.transform.scale(rass_image, (100, 100))
 rass_place = rass_image.get_rect(topright=(WIDTH - 10, 270))
 
 artur_price = 500

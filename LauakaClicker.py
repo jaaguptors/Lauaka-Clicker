@@ -17,8 +17,8 @@ font = pygame.font.SysFont(None, 40)
 small_font = pygame.font.SysFont(None, 30)
 pudelid = 0
 
-artur_image = pygame.image.load("Sprites/artur.png")
-artur_image = pygame.transform.scale(artur_image, (80, 80))
+artur_image = pygame.image.load("Sprites/Sammal.png")
+artur_image = pygame.transform.scale(artur_image, (100, 100))
 artur_place = artur_image.get_rect(topright=(WIDTH - 10, 10))
 
 ronja_image = pygame.image.load("Sprites/ronja.png")

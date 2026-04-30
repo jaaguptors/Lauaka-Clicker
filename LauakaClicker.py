@@ -9,7 +9,7 @@ pygame.display.set_caption("Lauaka Clicker")
 image = pygame.image.load("Sprites/LauakaSprite.png")
 image = pygame.transform.scale(image, (420, 420))
 
-background = pygame.image.load("Sprites/keegi-alles-kaebas-et-õlu-on-kallis-rimis-walter-praegu-59-v0-arsiof01d6yb1.webp")
+background = pygame.image.load("Sprites/Taust.png")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
 image_place = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))

@@ -98,9 +98,9 @@ while True:
     rass_text = small_font.render(f"{rass_price}", True, (0, 0, 0))
 
     screen.blit(pudelid_text, (20, 20))
-    screen.blit(artur_text, (WIDTH - 70, 100))
-    screen.blit(ronja_text, (WIDTH - 70, 230))
-    screen.blit(rass_text, (WIDTH - 70, 360))
+    screen.blit(artur_text, (WIDTH - 75, 110))
+    screen.blit(ronja_text, (WIDTH - 70, 240))
+    screen.blit(rass_text, (WIDTH - 75, 370))
 
 
     pygame.display.flip()

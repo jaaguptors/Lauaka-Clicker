@@ -22,9 +22,6 @@ grey_click_image = pygame.transform.scale(grey_click_image, (420, 420))
 walter_click_image = pygame.image.load("Sprites/Ronja.png")
 walter_click_image = pygame.transform.scale(walter_click_image, (420, 420))
 
-
-
-
 background = pygame.image.load("Sprites/Taust.png")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
@@ -72,6 +69,9 @@ ronja_sound = pygame.mixer.Sound("sounds/ronja sound_IOS.mp3")
 rass_sound = pygame.mixer.Sound("sounds/Rass sound.mp3")
 artur_sound = pygame.mixer.Sound("sounds/artur sound.mp3")
 ratsep_sound = pygame.mixer.Sound("sounds/ratsep sound.mp3")
+viru_sound = pygame.mixer.Sound("sounds/mutsioneerima sound 2.mp3")
+absolut_sound = pygame.mixer.Sound("sounds/mutsioneerima sound 3.mp3")
+grey_sound = pygame.mixer.Sound("sounds/mutsioneerima sound 4.mp3")
 walter_sound = pygame.mixer.Sound("sounds/mutsioneerima sound.mp3")
 
 ronja_price = 100
@@ -166,18 +166,21 @@ while True:
                         pudelid -= viru_price
                         cursor += 1
                         viru_amount += 1
+                        viru_sound.play()
 
                 if absolut_place.collidepoint(event.pos):
                     if pudelid >= absolut_price:
                         pudelid -= absolut_price
                         cursor += 10
                         absolut_amount += 1
+                        absolut_sound.play()
 
                 if grey_place.collidepoint(event.pos):
                     if pudelid >= grey_price:
                         pudelid -= grey_price
                         cursor += 50
                         grey_amount += 1
+                        grey_sound.play()
 
                 if walter_place.collidepoint(event.pos):
                     if pudelid >= walter_price:

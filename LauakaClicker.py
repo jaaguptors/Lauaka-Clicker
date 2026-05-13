@@ -10,16 +10,16 @@ pygame.display.set_caption("Lauaka Clicker")
 image = pygame.image.load("Sprites/LauakaSprite.png")
 image = pygame.transform.scale(image, (420, 420))
 
-viru_click_image = pygame.image.load("Sprites/Ronja.png")
+viru_click_image = pygame.image.load("Sprites/Viru.png")
 viru_click_image = pygame.transform.scale(viru_click_image, (420, 420))
 
-absolut_click_image = pygame.image.load("Sprites/Ronja.png")
+absolut_click_image = pygame.image.load("Sprites/Absolut.png")
 absolut_click_image = pygame.transform.scale(absolut_click_image, (420, 420))
 
-grey_click_image = pygame.image.load("Sprites/Ronja.png")
+grey_click_image = pygame.image.load("Sprites/GreyGoose.png")
 grey_click_image = pygame.transform.scale(grey_click_image, (420, 420))
 
-walter_click_image = pygame.image.load("Sprites/Ronja.png")
+walter_click_image = pygame.image.load("Sprites/Walter.png")
 walter_click_image = pygame.transform.scale(walter_click_image, (420, 420))
 
 background = pygame.image.load("Sprites/Taust.png")
@@ -49,19 +49,19 @@ ratsep_image = pygame.image.load("Sprites/Rass.png")
 ratsep_image = pygame.transform.scale(ratsep_image, (100, 100))
 ratsep_place = ratsep_image.get_rect(topright=(WIDTH - 220, 410))
 
-viru_image = pygame.image.load("Sprites/Rass.png")
+viru_image = pygame.image.load("Sprites/Viru.png")
 viru_image = pygame.transform.scale(viru_image, (100, 100))
 viru_place = viru_image.get_rect(topright=(WIDTH - 400, 50))
 
-absolut_image = pygame.image.load("Sprites/Rass.png")
+absolut_image = pygame.image.load("Sprites/Absolut.png")
 absolut_image = pygame.transform.scale(absolut_image, (100, 100))
 absolut_place = absolut_image.get_rect(topright=(WIDTH - 400, 170))
 
-grey_image = pygame.image.load("Sprites/Rass.png")
+grey_image = pygame.image.load("Sprites/GreyGoose.png")
 grey_image = pygame.transform.scale(grey_image, (100, 100))
 grey_place = grey_image.get_rect(topright=(WIDTH - 400, 290))
 
-walter_image = pygame.image.load("Sprites/Rass.png")
+walter_image = pygame.image.load("Sprites/Walter.png")
 walter_image = pygame.transform.scale(walter_image, (100, 100))
 walter_place = walter_image.get_rect(topright=(WIDTH - 400, 410))
 

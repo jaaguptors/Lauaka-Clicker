@@ -45,7 +45,7 @@ artur_image = pygame.image.load("Sprites/Sammal.png")
 artur_image = pygame.transform.scale(artur_image, (100, 100))
 artur_place = artur_image.get_rect(topright=(WIDTH - 220, 290))
 
-ratsep_image = pygame.image.load("Sprites/Rass.png")
+ratsep_image = pygame.image.load("Sprites/Rätsep.png")
 ratsep_image = pygame.transform.scale(ratsep_image, (100, 100))
 ratsep_place = ratsep_image.get_rect(topright=(WIDTH - 220, 410))
 

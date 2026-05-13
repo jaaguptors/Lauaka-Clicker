@@ -69,14 +69,18 @@ walter_image = pygame.transform.scale(walter_image, (100, 100))
 walter_place = walter_image.get_rect(topright=(WIDTH - 400, 410))
 
 ronja_sound = pygame.mixer.Sound("sounds/ronja sound_IOS.mp3")
+rass_sound = pygame.mixer.Sound("sounds/Rass sound.mp3")
+artur_sound = pygame.mixer.Sound("sounds/artur sound.mp3")
+ratsep_sound = pygame.mixer.Sound("sounds/ratsep sound.mp3")
+walter_sound = pygame.mixer.Sound("sounds/mutsioneerima sound.mp3")
 
-ronja_price = 20
-rass_price = 100
-artur_price = 500
-ratsep_price = 1000
-viru_price = 5000
-absolut_price = 20000
-grey_price = 100000
+ronja_price = 100
+rass_price = 500
+artur_price = 2500
+ratsep_price = 15000
+viru_price = 500
+absolut_price = 2500
+grey_price = 10000
 walter_price = 10000000
 
 cursor = 1
@@ -134,6 +138,7 @@ while True:
                         pudelid -= artur_price
                         artur += 100
                         artur_amount += 1
+                        artur_sound.play()
 
                 if ronja_place.collidepoint(event.pos):
                     if pudelid >= ronja_price:
@@ -147,12 +152,14 @@ while True:
                         pudelid -= rass_price
                         rass += 10
                         rass_amount += 1
+                        rass_sound.play()
 
                 if ratsep_place.collidepoint(event.pos):
                     if pudelid >= ratsep_price:
                         pudelid -= ratsep_price
-                        ratsep += 500
+                        ratsep += 1000
                         ratsep_amount += 1
+                        ratsep_sound.play()
 
                 if viru_place.collidepoint(event.pos):
                     if pudelid >= viru_price:
@@ -177,6 +184,8 @@ while True:
                         pudelid -= walter_price
                         cursor += 10000
                         walter_amount += 1
+                        walter_sound.play()
+
     if walter_amount > 0:
         image = walter_click_image
     elif grey_amount > 0:
@@ -226,10 +235,10 @@ while True:
         ronja_info = smaller_font.render(f"1 pudel sekundis",True,(0, 0, 0))
         rass_info = smaller_font.render(f"10 pudelit sekundis", True, (0, 0, 0))
         artur_info = smaller_font.render(f"100 pudelit sekundis", True, (0, 0, 0))
-        ratsep_info = smaller_font.render(f"500 pudelit sekundis", True, (0, 0, 0))
+        ratsep_info = smaller_font.render(f"1000 pudelit sekundis", True, (0, 0, 0))
         viru_info = smaller_font.render(f"Click +1", True, (0, 0, 0))
         absolut_info = smaller_font.render(f"Click +10", True, (0, 0, 0))
-        grey_info = smaller_font.render(f"Click +50", True, (0, 0, 0))
+        grey_info = smaller_font.render(f"Click +100", True, (0, 0, 0))
         walter_info = smaller_font.render(f"Click +10000", True, (0, 0, 0))
 
         ronja_amount_text = smaller_font.render(f"Ronja: {ronja_amount}", True, (0, 0, 0))
@@ -242,14 +251,14 @@ while True:
         walter_amount_text = smaller_font.render(f"Walter: {walter_amount}", True, (0, 0, 0))
 
 
-        screen.blit(ronja_text, (WIDTH - 280, 150))
+        screen.blit(ronja_text, (WIDTH - 285, 150))
         screen.blit(rass_text, (WIDTH - 285, 270))
-        screen.blit(artur_text, (WIDTH - 285, 390))
+        screen.blit(artur_text, (WIDTH - 290, 390))
         screen.blit(ratsep_text, (WIDTH - 295, 510))
 
-        screen.blit(viru_text, (WIDTH - 475, 150))
-        screen.blit(absolut_text, (WIDTH - 480, 270))
-        screen.blit(grey_text, (WIDTH - 485, 390))
+        screen.blit(viru_text, (WIDTH - 465, 150))
+        screen.blit(absolut_text, (WIDTH - 470, 270))
+        screen.blit(grey_text, (WIDTH - 475, 390))
         screen.blit(walter_text, (WIDTH - 495, 510))
 
         screen.blit(ronja_info, (WIDTH - 230, 100))

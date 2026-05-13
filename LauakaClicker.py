@@ -10,6 +10,21 @@ pygame.display.set_caption("Lauaka Clicker")
 image = pygame.image.load("Sprites/LauakaSprite.png")
 image = pygame.transform.scale(image, (420, 420))
 
+viru_click_image = pygame.image.load("Sprites/Ronja.png")
+viru_click_image = pygame.transform.scale(viru_click_image, (420, 420))
+
+absolut_click_image = pygame.image.load("Sprites/Ronja.png")
+absolut_click_image = pygame.transform.scale(absolut_click_image, (420, 420))
+
+grey_click_image = pygame.image.load("Sprites/Ronja.png")
+grey_click_image = pygame.transform.scale(grey_click_image, (420, 420))
+
+walter_click_image = pygame.image.load("Sprites/Ronja.png")
+walter_click_image = pygame.transform.scale(walter_click_image, (420, 420))
+
+
+
+
 background = pygame.image.load("Sprites/Taust.png")
 background = pygame.transform.scale(background, (WIDTH, HEIGHT))
 
@@ -53,6 +68,8 @@ walter_image = pygame.image.load("Sprites/Rass.png")
 walter_image = pygame.transform.scale(walter_image, (100, 100))
 walter_place = walter_image.get_rect(topright=(WIDTH - 400, 410))
 
+ronja_sound = pygame.mixer.Sound("sounds/ronja sound_IOS.mp3")
+
 ronja_price = 20
 rass_price = 100
 artur_price = 500
@@ -77,7 +94,6 @@ absolut_amount = 0
 grey_amount = 0
 walter_amount = 0
 
-
 last_increment_time = None
 
 shop_open = False
@@ -94,6 +110,8 @@ while True:
     if current_time - last_increment_time >= 1000:
         pudelid += ronja
         pudelid += rass
+        pudelid += artur
+        pudelid += ratsep
         last_increment_time = current_time
 
     for event in pygame.event.get():
@@ -122,6 +140,7 @@ while True:
                         pudelid -= ronja_price
                         ronja += 1
                         ronja_amount += 1
+                        ronja_sound.play()
 
                 if rass_place.collidepoint(event.pos):
                     if pudelid >= rass_price:
@@ -158,9 +177,15 @@ while True:
                         pudelid -= walter_price
                         cursor += 10000
                         walter_amount += 1
-
+    if walter_amount > 0:
+        image = walter_click_image
+    elif grey_amount > 0:
+        image = grey_click_image
+    elif absolut_amount > 0:
+        image = absolut_click_image
+    elif viru_amount > 0:
+        image = viru_click_image
     screen.blit(background, (0, 0))
-
     screen.blit(image, image_place)
 
     pudelid_text = font.render(f"pudelid: {pudelid}",True,(0, 0, 0))
